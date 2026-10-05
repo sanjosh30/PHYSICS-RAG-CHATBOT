@@ -1,0 +1,58 @@
+# ============================================================
+# Physics RAG Chatbot — Python Dependencies
+# Install: pip install -r requirements.txt
+# ============================================================
+
+# --- Core LangChain stack ---
+langchain==0.3.25
+langchain-community==0.3.24
+langchain-chroma==0.2.4
+langchain-ollama==0.3.3
+langchain-openai==0.3.19
+langchain-huggingface==0.1.2
+
+# --- Vector Store (chromadb 1.x required by langchain-chroma 0.2.x) ---
+chromadb==1.0.12
+
+# --- Embeddings & Reranker ---
+sentence-transformers==3.4.1
+transformers==4.51.3
+torch==2.6.0
+torchvision==0.21.0
+tf-keras                  # backwards compat shim when Keras 3 is installed
+
+# --- PDF Parsing ---
+pymupdf==1.25.5
+
+# --- Web scraping (Feynman HTML fallback) ---
+beautifulsoup4==4.12.3
+requests==2.32.3
+httpx==0.28.1
+
+# --- LLM backends ---
+openai==1.82.1
+ollama==0.4.8
+
+# --- Streamlit UI ---
+streamlit==1.45.1
+
+# --- Data & utilities ---
+python-dotenv==1.1.0
+pydantic==2.11.5
+pydantic-settings==2.9.1
+tqdm==4.67.1
+numpy==1.26.4
+pandas==2.2.3
+
+# --- Logging ---
+loguru==0.7.3
+
+# --- Evaluation ---
+rouge-score==0.1.2
+nltk==3.9.1
+scikit-learn==1.6.1
+
+# --- Testing ---
+pytest==8.3.5
+pytest-asyncio==0.26.0
+pytest-mock==3.14.0

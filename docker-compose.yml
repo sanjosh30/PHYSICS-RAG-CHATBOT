@@ -1,0 +1,83 @@
+# ============================================================
+# Physics RAG Chatbot — Docker Compose
+#
+# Services:
+#   app    — Streamlit chatbot (port 8501)
+#   ollama — Ollama LLM server (port 11434)
+#
+# Usage:
+#   docker-compose up -d
+#   docker-compose exec app python scripts/ingest.py
+# ============================================================
+
+version: "3.9"
+
+services:
+
+  # ── Ollama LLM Server ──────────────────────────────────────────────────────
+  ollama:
+    image: ollama/ollama:latest
+    container_name: physics-rag-ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_data:/root/.ollama
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:11434/api/tags"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+      start_period: 30s
+    # Pull llama3.1 model on startup
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      "ollama serve &
+       sleep 10 &&
+       ollama pull llama3.1 &&
+       wait"
+
+  # ── Physics RAG App ────────────────────────────────────────────────────────
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: physics-rag-app
+    ports:
+      - "8501:8501"
+    environment:
+      - LLM_BACKEND=ollama
+      - OLLAMA_BASE_URL=http://ollama:11434
+      - OLLAMA_MODEL=llama3.1
+      - EMBEDDING_MODEL=BAAI/bge-small-en-v1.5
+      - EMBEDDING_DEVICE=cpu
+      - CHROMA_PERSIST_DIR=/app/vectorstore/chroma_db
+      - RETRIEVAL_TOP_K=10
+      - RERANK_TOP_K=3
+      - CHUNK_SIZE=512
+      - CHUNK_OVERLAP=64
+      - LLM_TEMPERATURE=0.1
+    volumes:
+      # Mount raw PDFs (add your PDFs here before running)
+      - ./data/raw/feynman:/app/data/raw/feynman:ro
+      - ./data/raw/openstax:/app/data/raw/openstax:ro
+      # Persist vector store between restarts
+      - chroma_data:/app/vectorstore/chroma_db
+      # Persist logs
+      - ./logs:/app/logs
+    depends_on:
+      ollama:
+        condition: service_healthy
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 90s
+
+volumes:
+  ollama_data:
+    driver: local
+  chroma_data:
+    driver: local
