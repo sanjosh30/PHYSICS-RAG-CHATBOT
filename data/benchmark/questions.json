@@ -1,0 +1,182 @@
+[
+  {
+    "id": 1,
+    "question": "State Newton's second law of motion and write it as an equation.",
+    "ground_truth": "Newton's second law states that the net force on an object equals its mass times its acceleration: F = ma.",
+    "expected_keywords": ["F = ma", "force", "mass", "acceleration"],
+    "expected_source_keywords": ["Newton", "second law", "force"],
+    "category": "mechanics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 2,
+    "question": "What is the speed of light in a vacuum and what is its symbol?",
+    "ground_truth": "The speed of light in a vacuum is approximately 3 × 10^8 m/s, denoted by the symbol c.",
+    "expected_keywords": ["speed of light", "vacuum", "constant"],
+    "expected_source_keywords": ["speed of light", "vacuum", "light"],
+    "category": "electromagnetism",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 3,
+    "question": "Explain the photoelectric effect and what Einstein concluded from it.",
+    "ground_truth": "The photoelectric effect is the emission of electrons from a metal when light shines on it. Einstein proposed that light consists of quanta (photons) with energy E = hf, and an electron is emitted only if the photon energy exceeds the work function.",
+    "expected_keywords": ["photon", "work function", "electron", "energy"],
+    "expected_source_keywords": ["photoelectric", "Einstein", "electron"],
+    "category": "quantum",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 4,
+    "question": "Write Maxwell's four equations in integral form and briefly describe what each one represents.",
+    "ground_truth": "Maxwell's equations are: (1) Gauss's law for electricity, (2) Gauss's law for magnetism, (3) Faraday's law of induction, (4) Ampère-Maxwell law. They describe the relationships between electric fields, magnetic fields, charges, and currents.",
+    "expected_keywords": ["Gauss", "Faraday", "Ampere", "electric field", "magnetic field"],
+    "expected_source_keywords": ["Maxwell", "electric", "magnetic"],
+    "category": "electromagnetism",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 5,
+    "question": "What is the Heisenberg uncertainty principle?",
+    "ground_truth": "The Heisenberg uncertainty principle states that the position and momentum of a particle cannot both be known precisely simultaneously: Δx · Δp ≥ ħ/2.",
+    "expected_keywords": ["uncertainty", "position", "momentum"],
+    "expected_source_keywords": ["Heisenberg", "uncertainty", "position"],
+    "category": "quantum",
+    "corpus_hint": "feynman"
+  },
+  {
+    "id": 6,
+    "question": "Derive the equation for simple harmonic motion starting from Hooke's law.",
+    "ground_truth": "Hooke's law: F = -kx. Using F = ma gives m·ẍ = -kx, or ẍ + ω²x = 0 where ω = √(k/m). The solution is x(t) = A·cos(ωt + φ).",
+    "expected_keywords": ["Hooke", "spring", "simple harmonic", "equation"],
+    "expected_source_keywords": ["Hooke", "harmonic", "spring"],
+    "category": "mechanics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 7,
+    "question": "What is Coulomb's law and what does it describe?",
+    "ground_truth": "Coulomb's law states that the electrostatic force between two point charges is proportional to the product of their charges and inversely proportional to the square of the distance between them: F = kq₁q₂/r².",
+    "expected_keywords": ["Coulomb", "charge", "force", "distance"],
+    "expected_source_keywords": ["Coulomb", "charge", "force"],
+    "category": "electromagnetism",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 8,
+    "question": "State the law of conservation of energy and give an example.",
+    "ground_truth": "Conservation of energy states that the total energy of an isolated system remains constant. For example, a falling ball converts potential energy (mgh) to kinetic energy (½mv²).",
+    "expected_keywords": ["conservation", "energy", "kinetic", "potential"],
+    "expected_source_keywords": ["energy", "conservation", "kinetic"],
+    "category": "mechanics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 9,
+    "question": "What is the Bohr model of the hydrogen atom and what are its quantisation conditions?",
+    "ground_truth": "The Bohr model postulates electrons orbit the nucleus in discrete circular orbits where angular momentum is quantised: L = nħ. The energy levels are Eₙ = -13.6/n² eV.",
+    "expected_keywords": ["Bohr", "quantization", "angular momentum", "hydrogen"],
+    "expected_source_keywords": ["Bohr", "hydrogen", "quantization"],
+    "category": "quantum",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 10,
+    "question": "What is Faraday's law of electromagnetic induction?",
+    "ground_truth": "Faraday's law states that the induced electromotive force (EMF) in a circuit is equal to the negative rate of change of magnetic flux through the circuit: EMF = -dΦ/dt.",
+    "expected_keywords": ["EMF", "magnetic flux", "induction", "Faraday"],
+    "expected_source_keywords": ["Faraday", "induction", "magnetic"],
+    "category": "electromagnetism",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 11,
+    "question": "Explain the first law of thermodynamics.",
+    "ground_truth": "The first law of thermodynamics states that the change in internal energy of a system equals the heat added to the system minus the work done by the system: ΔU = Q - W.",
+    "expected_keywords": ["internal energy", "heat", "work", "thermodynamics"],
+    "expected_source_keywords": ["thermodynamics", "internal energy", "heat"],
+    "category": "thermodynamics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 12,
+    "question": "What is the de Broglie wavelength and what does it imply about matter?",
+    "ground_truth": "The de Broglie wavelength is λ = h/p, where h is Planck's constant and p is momentum. It implies that all matter has wave-like properties.",
+    "expected_keywords": ["de Broglie", "wavelength", "matter", "wave"],
+    "expected_source_keywords": ["de Broglie", "wavelength", "matter"],
+    "category": "quantum",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 13,
+    "question": "What is the formula for gravitational potential energy?",
+    "ground_truth": "Gravitational potential energy near Earth's surface is U = mgh, where m is mass, g ≈ 9.8 m/s², and h is height. For general gravitation: U = -GMm/r.",
+    "expected_keywords": ["gravitational", "potential energy", "height", "mass"],
+    "expected_source_keywords": ["gravitational", "potential energy", "height"],
+    "category": "mechanics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 14,
+    "question": "What is Snell's law and how does it describe refraction?",
+    "ground_truth": "Snell's law describes refraction at an interface: n₁ sin θ₁ = n₂ sin θ₂, where n₁, n₂ are refractive indices and θ₁, θ₂ are angles of incidence and refraction.",
+    "expected_keywords": ["Snell", "refraction", "angle", "index"],
+    "expected_source_keywords": ["Snell", "refraction", "angle"],
+    "category": "optics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 15,
+    "question": "What is the ideal gas law?",
+    "ground_truth": "The ideal gas law is PV = nRT, where P is pressure, V is volume, n is number of moles, R is the universal gas constant, and T is temperature in Kelvin.",
+    "expected_keywords": ["pressure", "volume", "temperature", "ideal gas"],
+    "expected_source_keywords": ["ideal gas", "pressure", "temperature"],
+    "category": "thermodynamics",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 16,
+    "question": "Explain what electric potential energy and electric potential are.",
+    "ground_truth": "Electric potential energy is the energy stored due to the positions of charges. Electric potential V = U/q is the potential energy per unit charge at a point in an electric field. V = kq/r for a point charge.",
+    "expected_keywords": ["electric potential", "charge", "energy", "field"],
+    "expected_source_keywords": ["electric potential", "charge", "energy"],
+    "category": "electromagnetism",
+    "corpus_hint": "both"
+  },
+  {
+    "id": 17,
+    "question": "What is the Doppler effect for sound?",
+    "ground_truth": "The Doppler effect is the change in observed frequency of a wave when the source or observer is moving. For sound: f_obs = f_s × (v ± v_o)/(v ∓ v_s).",
+    "expected_keywords": ["Doppler", "frequency", "observer", "source"],
+    "expected_source_keywords": ["Doppler", "frequency", "sound"],
+    "category": "mechanics",
+    "corpus_hint": "openstax"
+  },
+  {
+    "id": 18,
+    "question": "What is the Schrödinger equation and what does it describe?",
+    "ground_truth": "The Schrödinger equation describes how the quantum state (wave function ψ) of a physical system evolves over time: iħ ∂ψ/∂t = Ĥψ.",
+    "expected_keywords": ["Schrodinger", "wave function", "quantum", "energy"],
+    "expected_source_keywords": ["Schrodinger", "wave function", "quantum"],
+    "category": "quantum",
+    "corpus_hint": "feynman"
+  },
+  {
+    "id": 19,
+    "question": "What is the best recipe for chocolate cake?",
+    "ground_truth": "OUT_OF_SCOPE",
+    "expected_keywords": ["OUT_OF_SCOPE"],
+    "expected_source_keywords": [],
+    "category": "out_of_scope",
+    "corpus_hint": null
+  },
+  {
+    "id": 20,
+    "question": "Who won the FIFA World Cup in 2022?",
+    "ground_truth": "OUT_OF_SCOPE",
+    "expected_keywords": ["OUT_OF_SCOPE"],
+    "expected_source_keywords": [],
+    "category": "out_of_scope",
+    "corpus_hint": null
+  }
+]
